@@ -1,0 +1,41 @@
+\documentclass[a4paper, 12pt, onecolumn, openright, oneside]{report}
+
+\usepackage{setspace} 
+\usepackage[ansinew]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage[francais]{babel} 
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{lipsum}% generates filler text
+% ajoute (entre autre) la bibliographie dans la table des matieres 
+\usepackage[french]{minitoc}
+\usepackage[nottoc]{tocbibind}
+\definecolor{rouge}{RGB}{255,112,119}
+\definecolor{rouge-clair}{RGB}{255,163,168}
+\definecolor{rouge-tres-clair}{RGB}{255,217,219}
+
+\title{Rapport de stage}
+\author{\textsc{Thibault} - \textsc{Gauthier}}
+\date{Mise à jour  le \today}
+
+\begin{document}
+   \maketitle
+   \input{chapitres/remerciements.tex}
+   \tableofcontents
+   \input{chapitres/introduction.tex}
+   \part{Contextualisation}
+   \input{chapitres/capgemini.tex}
+   \input{chapitres/geofibre.tex}
+   \part{Travaux}
+   \input{chapitres/travaux.tex}
+   \input{chapitres/resume-fr.tex}
+   \input{chapitres/resume-en.tex}
+   \input{chapitres/conclusion.tex}
+   \appendix 
+      \input{annexes/bibliographie.tex}
+      \input{annexes/travaux-par-semaine.tex}
+\end{document}
