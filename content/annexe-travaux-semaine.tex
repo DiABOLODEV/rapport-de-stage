@@ -1,44 +1,78 @@
-   	 \chapter{Travaux par semaine}
-   	    \begin{enumerate}[label= Semaine \no\arabic*.]
-   	       \setcounter{enumi}{10}
-   	       \item Présentation de l'étage \textsc{TMA OSS} par le directeur de projets \textsc{Arnaud Bellina}. Installation de mon poste de travail. Installation des différents logiciels et lecture de la documentation ``KIT D'ACCUEIL''. Visite autonome du bâtiment (CE, cafétaria, infirmerie, support). Création du badge d'entrée. Intégration dans l'équipe
-   	       \item Présentation des outils essentiels pour le développement par \textsc{Anne-Sophie Lescop}. Importation des projets qui constitue l'application Géofibre à partir de SVN. Decorticage du code.
-   	       \item Présentation SIG par Eric Langlois. Lecture de la documentation ``Spécifications fonctionnelles''. Première tâche de développement : Externalisation de la Minimap. Lecture de la documentation, apprentissage de géofibre.
-   	       \item Gaël m'a montré comment fonctionne l'interface des violations Sonar. Correction d'un bug côté applicatif ou une conf en base de données est mal récupérée.
-   	       \item Tâche toolbox
-   	    
-   	       \item Tests d'intégration sur la Réunion
-   	           \begin{enumerate}[label = Test set \no\alph*.]
-   	           \item \emph{P1} - Gestion infrastructure - Recalage GC (10 tests)
-   	           \item \emph{P1} - Gestion infrastructure - Zone de recalage (8 tests)
-   	           \item \emph{P1}
-   	         \end{enumerate}
-   	       \item Tests d'intégration sur la Guyane
-   	           \begin{enumerate}[label = Test \no\alph*.]
-   	           \item Gestion infrastructure - Site supports (12 instances de tests)
-   	         \end{enumerate}
-   	       \item Tests d'intégration sur la Guadeloupe : \begin{enumerate}[label = Test set \no\alph*.]
-   	          \item \emph{P1} - Gestion infrastructure - Site supports 
-   	           \item \emph{P3} - Filtrage 
-   	           \item \emph{P3} - Gestion des droits 
-   	           \item \emph{P3} - Géosignets 
-   	           \item \emph{P3} - Localisation objet métier 
-   	           \item \emph{P1} - Exports - Dossier OPGC - Base arrière de PM
-   	           \end{enumerate}
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item
-   	       \item 
-   	     \end{enumerate}
+\chapter{Travaux par semaine}
+\begin{enumerate}[label= Semaine \no\textbf{\arabic*.},itemsep=20pt]
+\setcounter{enumi}{10}
+
+\item \textbf{Visite, présentation et rencontre} avec les équipes de la ferme d'applications \textsc{TMA OSS}. Explication de l'activité par le chef de service \textsc{Arnaud Bellina}. 
+\newline Visite, présentation et rencontre avec les différents services du bâtiment de Capgemini (Infirmerie, CE, Cafétaria, RH, Assistante) .
+\newline \textbf{Installation de mon poste de travail} au sein de l'openspace de l'équipe Géofibre et intégration supervisée par le chef de groupe \textsc{Patrick Veillon} et la chef de projet \textsc{Anne-Sophie Lescop}.
+\newline \textbf{Installation des logiciels} et \textbf{lecture} de la documentation ainsi que du code qui compose le projet Géofibre épaulé par l'équipe.
+
+\item \textbf{Montée en compétence} générale sur l'application Géofibre.
+\item \textbf{Développement de la version G1R6 Front (IHM Flex)} Externalisation des systèmes de projection, emprise, échelles, minimap
+
+\item \textbf{Développement de la version G1R6 Back (Serveur, Toolbox)} Vérification de la gestion de la projection
+
+\item \textbf{Développement de la version G1R6 Back (Serveur, Toolbox)} Aiguillage servlet 
+\newline \textbf{Développement de la version G1R6 Back (Serveur, Toolbox)} Impact code appelant
+
+\item \textbf{Tests d'intégration de la version G1R6 sur la Réunion}
+\begin{enumerate}[label = Tests \no\arabic*.,align=left]
+\item \emph{\colorbox{rouge}{P1}} - Gestion infrastructure - Recalage GC 
+\item \emph{\colorbox{rouge}{P1}} - Gestion infrastructure - Zone de recalage 
+\item \emph{\colorbox{rouge-clair}{P2}} - Exploitation - Import RCV (Référenciel Commune Voies)
+\item \emph{\colorbox{rouge-clair}{P2}} - Localisation adresse
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Purge des fichiers (multi instance)
+\end{enumerate}
+
+\item \textbf{Tests d'intégration de la version G1R6 sur la Guyane}
+\begin{enumerate}[label = Tests \no\arabic*.,align=left]
+\item  \emph{\colorbox{rouge}{P1}} - Gestion FTTH - Câbles
+\item \emph{\colorbox{rouge}{P1}} - Gestion FTTH - Parcours
+\item\emph{\colorbox{rouge}{P1}} -  Gestion FTTH - Zone de travail
+\item \emph{\colorbox{rouge}{P1}} - Gestion infrastructure - Itinéraires GC
+\item \emph{\colorbox{rouge}{P1}} - Gestion infrastructure - Site supports 
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Filtrage
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Gestion des droits
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Géosignets
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Outil de mesure
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Sauvegarde du contexte
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Table des matières   	           
+\end{enumerate}
+
+\item \textbf{Tests d'intégration de la version G1R6 sur la Guadeloupe}
+\begin{enumerate}[label = Tests \no\arabic*.,align=left]
+\item \emph{\colorbox{rouge}{P1}} - Gestion infrastructure - Site supports 
+\item \emph{\colorbox{rouge}{P1}} - Exports - Dossier OPGC - Base arrière de PM
+\item \emph{\colorbox{rouge-clair}{P2}} - Màj adresse des immeubles depuis optimum
+\item \emph{\colorbox{rouge-clair}{P2}} - Exploitation - majBatchData
+\item \emph{\colorbox{rouge-clair}{P2}} - Statistiques
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Filtrage 
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Gestion des droits 
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Géosignets 
+\item \emph{\colorbox{rouge-tres-clair}{P3}} - Localisation objet métier 
+\end{enumerate}
+
+\item \textbf{Tests d'intégration de la version G1R6 sur la Martinique}
+\begin{enumerate}[label = Tests \no\arabic*.,align=left]
+\item  \emph{\colorbox{rouge}{P1}} - Gestion FTTH - Câbles
+\item \emph{\colorbox{rouge}{P1}} - Gestion FTTH - Parcours
+\item \emph{\colorbox{rouge}{P1}} - Gestion infrastructure - Itinéraires GC
+\end{enumerate}
+
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item 
+\end{enumerate}
