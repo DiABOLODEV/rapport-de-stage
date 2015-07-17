@@ -1,9 +1,9 @@
 \documentclass[a4paper, 12pt, onecolumn, openright, oneside]{report}
 
-\usepackage{setspace} 
-\usepackage[ansinew]{inputenc} 
-\usepackage[T1]{fontenc} 
-\usepackage[francais]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{graphicx}
@@ -11,8 +11,7 @@
 \usepackage{color}
 \usepackage{geometry}
 \usepackage{comment}
-\usepackage{lipsum}% generates filler text
-% ajoute (entre autre) la bibliographie dans la table des matieres 
+\usepackage{lipsum}
 \usepackage[french]{minitoc}
 \usepackage[nottoc]{tocbibind}
 \definecolor{rouge}{RGB}{255,112,119}
@@ -21,27 +20,27 @@
 
 \title{Rapport de stage}
 \author{\textsc{Thibault} - \textsc{Gauthier}}
-\date{Mise à jour  le \today}
+\date{Mise Ã   jour  le \today}
 
 \begin{document}
-   \maketitle
-   \input{chapitres/remerciements.tex}
-   \tableofcontents
-   \input{chapitres/introduction.tex}
-   
-   \part{Environnement}
-   \input{chapitres/capgemini.tex}
-    \input{chapitres/tma-oss.tex}
-    \input{chapitres/sig.tex}
-   \input{chapitres/geofibre.tex}
-   
-   \part{Travaux réalisé}
-   \input{chapitres/travaux-geofibre.tex}
-   \input{chapitres/travaux-elearning.tex}
-   \input{chapitres/resume-fr.tex}
-   \input{chapitres/resume-en.tex}
-   \input{chapitres/conclusion.tex}
-   \appendix 
-      \input{annexes/bibliographie.tex}
-      \input{annexes/travaux-par-semaine.tex}
+  \maketitle
+  \input{chapitres/remerciements.tex}
+  \tableofcontents
+  %-------------------------------------------------------%
+  \input{chapitres/introduction.tex}
+  %-------------------------------------------------------%
+  \part{Contexte du stage}
+  \input{chapitres/capgemini.tex}
+  \part{Le projet Geofibre}
+  \input{chapitres/geofibre.tex}
+  \input{chapitres/travaux.tex}
+  %-------------------------------------------------------%
+  \input{chapitres/resume-fr.tex}
+  \input{chapitres/resume-en.tex}
+  %-------------------------------------------------------%
+  \input{chapitres/conclusion.tex}
+  %-------------------------------------------------------%
+  \appendix
+  \input{annexes/bibliographie.tex}
+  \input{annexes/travaux-par-semaine.tex}
 \end{document}
