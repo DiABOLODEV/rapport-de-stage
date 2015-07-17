@@ -1,6 +1,7 @@
 \documentclass[a4paper, 12pt, onecolumn, openright, oneside]{report}
 
 \usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
 \usepackage{setspace}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
@@ -17,14 +18,13 @@
 \definecolor{rouge}{RGB}{255,112,119}
 \definecolor{rouge-clair}{RGB}{255,163,168}
 \definecolor{rouge-tres-clair}{RGB}{255,217,219}
-
-\title{Rapport de stage}
-\author{\textsc{Thibault} - \textsc{Gauthier}}
-\date{Mise à  jour  le \today}
+\newcommand{\hr}{\rule{\linewidth}{0.5mm}}
 
 \begin{document}
-  \maketitle
+  \input{pagedegarde.tex}
+  %-------------------------------------------------------%
   \input{chapitres/remerciements.tex}
+  %-------------------------------------------------------%
   \tableofcontents
   %-------------------------------------------------------%
   \input{chapitres/introduction.tex}
