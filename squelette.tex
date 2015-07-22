@@ -15,10 +15,24 @@
 \usepackage{lipsum}
 \usepackage[french]{minitoc}
 \usepackage[nottoc]{tocbibind}
+\usepackage[nottoc]{tocbibind}
+\usepackage{fancyhdr} %pour definir les entêtes et pied de pages
+\usepackage[Sonny]{fncychap} %style de chapitre
+\pagestyle{fancy}
+\fancyhead[C]{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{}
 \definecolor{rouge}{RGB}{255,112,119}
 \definecolor{rouge-clair}{RGB}{255,163,168}
 \definecolor{rouge-tres-clair}{RGB}{255,217,219}
 \newcommand{\hr}{\rule{\linewidth}{0.5mm}}
+\renewcommand*{\familydefault}{\sfdefault}
+%Numéro de sections dans la marge
+\makeatletter
+\def\@seccntformat #1{ %
+\protect\makebox[0pt][r]{\csname the#1\endcsname \quad }}
+\makeatother
+
 
 \begin{document}
   \input{pagedegarde.tex}
@@ -44,6 +58,7 @@
   \input{chapitres/conclusion.tex}
   %-------------------------------------------------------%
   \appendix
+  \listoffigures
   \input{annexes/bibliographie.tex}
   \input{annexes/travaux-par-semaine.tex}
 \end{document}
