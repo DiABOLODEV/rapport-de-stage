@@ -10,7 +10,7 @@
 \usepackage{graphicx}
 \usepackage{fancybox}
 \usepackage{color}
-\usepackage{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{comment}
 \usepackage{lipsum}
 \usepackage[french]{minitoc}
@@ -18,6 +18,15 @@
 \usepackage[nottoc]{tocbibind}
 \usepackage{fancyhdr} %pour definir les entêtes et pied de pages
 \usepackage[Sonny]{fncychap} %style de chapitre
+\usepackage{tikz}
+\tikzset{
+  every overlay node/.style={
+    draw=white,anchor=north west,
+  },
+}
+\def\tikzoverlay{%
+   \tikz[baseline,overlay]\node[every overlay node]
+}%
 \pagestyle{fancy}
 \fancyhead[C]{}
 \fancyhead[L]{\leftmark}
@@ -35,7 +44,8 @@
 
 
 \begin{document}
-  \input{pagedegarde.tex}
+  \input{ldm.tex}
+  \input{cv.tex}
   %-------------------------------------------------------%
   \input{chapitres/remerciements.tex}
   %-------------------------------------------------------%

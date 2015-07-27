@@ -1,0 +1,97 @@
+%\SetLabelAlign{margin}{\llap{#1~~}} %label description dans la amrge
+
+\begin{titlepage}
+  %  \begin{minipage}[t]{0.5\linewidth} %t = top%
+  %  \flushleft {\large \textbf{CV de Thibault Gauthier}}
+  %1  \end{minipage}
+  %  \hfill
+
+  %\begin{minipage}[t]{0.5\linewidth}
+  %  \flushright \includegraphics[width = 3cm]{images/thibaultgauthier.jpg}
+
+  \tikzoverlay[text width=2.2cm] at (15.5cm,-0.3cm) {
+    \tikz node (label) at (0,0)[]{
+        \includegraphics[width=2.2cm]{images/thibaultgauthier.png}
+    };
+};
+  {\large \textbf{Thibault Gauthier, développeur informatique}}
+  \\\hr\\[1cm]
+  %col 1
+  \begin{minipage}[t]{8.7cm}
+
+    \framebox[8.7cm]{\textbf{Formations}}\\\\
+    \textbf{2013-2015} \\
+    \textsc{Master MIAGE\footnotemark option SIAD\footnotemark}
+    \\\textit{ISTIC de Rennes (35)}
+    \\\\Bases de données décisionnelles / objet, contrôle de gestion,
+    coopération et concurrence dans les systèmes et réseaux,
+    j2ee, recherche opérationnelle,management de
+    projet et intégration d'applications, prospective et
+    marketing, entrepôts de données, veille technologique
+    \\\\\textbf{2012-2013}\\
+    \textsc{Licence MIAGE}
+    \\\textit{ISTIC de Rennes (35)}
+    \\\\Algorithme des graphes, organisation des systèmes d'exploitation,
+    bases de données, bases de modélisation par objets, programmation, comptabilité de gestion,
+    environnement juridique, système, filles d'attente et
+    gestion de stock, analyse de données, théorie des
+    langages, organisation des entreprises, gestion financière,
+    techniques d'expression
+    \\\\\textbf{2010-2012} \\
+    \textsc{DUT Informatique}
+    \\\textit{ISTIC de Rennes (35)}
+    \\\\Méthodologie de la programmation, apprentissage de
+    langages (C, C++, Java, HTML, Python), conception de
+    systèmes d'informations, modélisation Merise et UML,
+    création et interrogation de bases de données (Oracle,
+    MySQL), interface dynamique avec logiciels web (PHP,
+    HTML), utilisation, programmation et administration des
+    Unix et Windows, architecture des ordinateurs,
+    protocoles réseaux et application Internet
+    \\\\\textbf{2008 - 2010} \\
+    \textsc{Bac S option SI\footnotemark}
+  \end{minipage}
+  \hfill
+  %col 2
+  \begin{minipage}[t]{8.7cm}
+
+    \framebox[8.7cm]{\textbf{Expériences professionnelles}}\\\\
+
+    \textbf{2015 - Stage de 6 mois} \\
+    \textsc{Capgemini} -
+    \textit{ESN à Rennes (35)}
+    \\\\Soutient, maintenance et développement d'évolutions sur l'application \textit{Geofibre} qui permet de visualiser et gérer le réseau FTTH Orange en France.
+    \\\\\textit{SIG, Arcgis, API Rest, Flex, Flash, Eclipse, FlashBuilder, shell, Linux, QC, Tests, PostgreSQL, SVN}
+    \\\\\textbf{2014 - Stage de 3 mois} \\
+    \textsc{CCM Benchmark} -
+     \textit{PME à Rennes (35)}
+    \\\\Analyse, développement et mise en production de l'application \textit{VideoSnack} qui permet de visualiser des vidéos rapidement.
+    \\\\\textit{SDK Android, Eclipse, Java, JSON, API REST, PHP, Bootstrap, Agile, Jira, Git, PostgreSQL}
+    \\\\\textbf{2013 - Stage de 3 mois} \\
+    \textsc{Acro-Caval} -
+    \textit{Association à Nîmes (30)}
+    \\\\Analyse, développement et mise en production du site Internet de l'association.
+    \\\\\textit{UML, Codeigniter, PHP , HTML/CSS, JQuery, MySQL, Bootstrap, OVH}
+    \\\\\framebox[8.7cm]{\textbf{Intérêts}}\\\\
+    Développement informatique, arts plastiques,
+    cirque et activités sportives.
+    \\\\\framebox[8.7cm]{\textbf{Informations}}\\
+    \begin{description}%[align=margin,labelsep=0pt]
+      \item[Date de naissance] 17/10/1992
+      \item[Téléphone] 07 83 76 35 76
+      \item[Email] thibault.gauthier.dev@gmail.com
+      \item[Site internet] http://thgauthi.github.io
+    \end{description}
+
+  \end{minipage}
+
+
+
+
+
+  %en dehors de l'env minipage
+  \addtocounter{footnote}{-2} %3=n
+  \stepcounter{footnote}\footnotetext{Méthodes Informatiques Appliquées à la Gestion des Entreprises}
+  \stepcounter{footnote}\footnotetext{Systèmes d'Informations d'Aide à la Décision}
+  \stepcounter{footnote}\footnotetext{Sciences de l'Ingénieur}
+\end{titlepage}
