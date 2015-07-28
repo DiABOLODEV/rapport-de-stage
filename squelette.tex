@@ -18,6 +18,7 @@
 \usepackage[nottoc]{tocbibind}
 \usepackage{fancyhdr} %pour definir les entêtes et pied de pages
 \usepackage[Sonny]{fncychap} %style de chapitre
+\usepackage{caption} %caption des images figure
 \pagestyle{fancy}
 \fancyhead[C]{}
 \fancyhead[L]{\leftmark}
@@ -32,24 +33,32 @@
 \def\@seccntformat #1{ %
 \protect\makebox[0pt][r]{\csname the#1\endcsname \quad }}
 \makeatother
-
+\captionsetup{
+font=footnotesize,
+justification=raggedright,
+singlelinecheck=false
+}
 
 \begin{document}
   \input{pagedegarde.tex}
   %-------------------------------------------------------%
   \input{chapitres/remerciements.tex}
   %-------------------------------------------------------%
+  \setcounter{secnumdepth}{1} %pas de numérotation des subsections
+  \setcounter{tocdepth}{1}  %pas de numérotation des subsections
   \tableofcontents
   %-------------------------------------------------------%
   \input{chapitres/introduction.tex}
   %-------------------------------------------------------%
   \part{Contexte du stage}
   \input{chapitres/capgemini.tex}
-  \input{chapitres/tmaoss.tex}
+  \input{chapitres/capgemini-rennes.tex}
   \input{chapitres/polesig.tex}
-    %-------------------------------------------------------%
+  %-------------------------------------------------------%
   \part{Le projet Geofibre}
   \input{chapitres/geofibre.tex}
+  %-------------------------------------------------------%
+  \part{Réalisation du stage}
   \input{chapitres/travaux.tex}
   %-------------------------------------------------------%
   \input{chapitres/resume-fr.tex}
