@@ -6,15 +6,79 @@ Geofibre propose une application WEB permettant la gestion des données descript
 L'application doit supporter le déploiement du réseau FTTH en termes de conception et de gestion du réseau. \\
 \\
 L'application repose sur le moteur SIG ArcGIS 10.0 de la société ESRI et propose une application Web accessible à travers le GASSI de Orange.
-
-	\begin{figure}
-		\centering
-			\includegraphics[width=2cm, height=2cm]{images/logo_geofibre.png}
-			\caption{Logo Geofibre}
-	\end{figure}
-
+\begin{figure}[h]
+  \captionbox{Logo de l'application Geofibre\label{fig:dummy}}{
+    \includegraphics[width=2cm]{images/logo_geofibre.png}
+  }
+\end{figure}
 	\section{Historique}
+	Le projet est née en 2010. Les deux premières années le projet s'est développé en méthode AGILE dans les locaux du client Orange à Lannion.
+	Les employés de Capgemini étaient présents pour l'assistance technique.
+
+
+\begin{colbox}{{HTML}{A3E8FF}}{Le versionnage des applications Capgemini: }
+    What is ....
+\end{colbox}
+
+
 	\chapter{Acteurs}
 		\section{Client \textsc{Orange}}
 		\section{Le prestataire \textsc{Capgemini}}
 	\chapter{Méthodologie de travail}
+	\section{Identification des versions}
+
+	Les versions sont marquées par des labels qui doivent permettre d'identifier de façon non équivoque toutes les évolutions successives des composants pour pouvoir retrouver et extraire de la base d'archives toute version livrée au client ou livrée pendant les phases d'intégration ou de la validation interne.
+	\\\\
+	On distingue deux types de versions :
+	\begin{description}
+		\item[Version majeure] : c'est une version complète du logiciel, c'est à dire qu'elle contient l'ensemble des composants du système
+		\item[Version mineure] : c'est une version paertielle du logiciel, c'est à dire qu'elle ne contient qu'un sous-ensebmel des composants du système, qui constitue un delta par rapport à la version précédente
+		(qui peut être une version majeure ou mineure) ; c'est en général le résultat d'une correction ou d'une évolution mineure.
+	\end{description}
+	Les labels de version sont structurés de telle sorte que cette dépendance entre versions soit mise en évidence.
+	\\La composition d'un label de version est de la forme \textsc{GxxRyyCzz}.
+	\\Dans ce sigle on retrouve :
+	\begin{description}
+		\item[Révision] : Une révision est attachée à un composant. \'A chaque fois qu'un utilisateur archive une nouvelle version d'un composant, l'outil de gestion de configuration crée une nouvelle révision de ce composant.
+		\item[Version et labels] : Une version permet d'identifier un ensemble cohérent de composants d'une application. L'identifiant de version est sous contrôle complet de l'équipe de projet. Par exemple la première version est la G1R0C0, puis les suivantes seront les
+		G1R1C0 puis la G2R0C0.
+		\item[Tronc et branches] : Le \textit{tronc} supporte les versions principales. En cas de travaux parallèles sur plusieurs versions (par exemple la correction d'une anomalie sur une version n-1 et développement de la version n), on crée une branche qui va permettre de modifier une version déjà livrée.
+		\\
+		 \end{description}
+\textit{Exemple} : La branche G1R0 contient les versions correctives G1R0C1 et G1R0C2 qui intégrent des correctifs d'anomalies idnetifiées sur la version G1R0C0 préalablement livrée.
+\setlength{\unitlength}{1.3cm}
+
+\begin{picture}(5,5)
+		%traits haut
+
+   \put(2.5,4.4){\line(1,0){1.5}}
+	 \put(6.5,4.4){\line(1,0){1.5}}
+	 \put(10.5,4.4){\line(1,0){1.5}}
+	 %oblique
+	 \put(1.5,4){\line(0.3,-1){0.5}}
+	 %traits bas
+	 \put(4.5,2.4){\line(1,0){1.5}}
+	 %fleches
+	 \put(4,4.4){\line(-0.3,0.3){0.2}}
+	 \put(4,4.4){\line(-0.3,-0.3){0.2}}
+
+	 \put(8,4.4){\line(-0.3,0.3){0.2}}
+	\put(8,4.4){\line(-0.3,-0.3){0.2}}
+
+	\put(12,4.4){\line(-0.3,0.3){0.2}}
+	\put(12,4.4){\line(-0.3,-0.3){0.2}}
+
+	\put(6,2.4){\line(-0.3,0.3){0.2}}
+	\put(6,2.4){\line(-0.3,-0.3){0.2}}
+
+	%fleche oblique
+	\put(2,2.4){\line(-0.3,0.2){0.2}}
+
+   \put(0,4){\framebox(2.5,0.8)[c]{G1R0C0}}
+	 \put(4,4){\framebox(2.5,0.8)[c]{G1R1C0}}
+	 \put(8,4){\framebox(2.5,0.8)[c]{G2R0C0}}
+
+	 \put(2,2){\framebox(2.5,0.8)[c]{G1R0C1}}
+	 \put(6,2){\framebox(2.5,0.8)[c]{G1R0C2}}
+
+\end{picture}

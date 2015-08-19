@@ -19,6 +19,9 @@
 \usepackage{fancyhdr} %pour definir les entêtes et pied de pages
 \usepackage[Sonny]{fncychap} %style de chapitre
 \usepackage{caption} %caption des images figure
+\usepackage{epigraph} %citations%
+\usepackage{lmodern}
+\usepackage{pict2e} %shéma%
 \pagestyle{fancy}
 \fancyhead[C]{}
 \fancyhead[L]{\leftmark}
@@ -38,6 +41,15 @@ font=footnotesize,
 justification=raggedright,
 singlelinecheck=false
 }
+\usepackage{xcolor}
+\usepackage{adjustbox}
+
+\newenvironment{colbox}[2]{%
+    \begin{adjustbox}{minipage=[b]{380px},margin=1ex,bgcolor=#1,env=center}% or use `bgcolor={HTML}{#1}` if you want to force HTML colors
+        \textbf{#2}\\
+}{%
+    \end{adjustbox}%
+}
 
 \begin{document}
   \input{pagedegarde.tex}
@@ -53,7 +65,6 @@ singlelinecheck=false
   \part{Contexte du stage}
   \input{chapitres/capgemini.tex}
   \input{chapitres/capgemini-rennes.tex}
-  \input{chapitres/polesig.tex}
   %-------------------------------------------------------%
   \part{Le projet Geofibre}
   \input{chapitres/geofibre.tex}
