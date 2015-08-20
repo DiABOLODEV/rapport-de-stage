@@ -21,6 +21,7 @@
 \usepackage{caption} %caption des images figure
 \usepackage{epigraph} %citations%
 \usepackage{lmodern}
+\usepackage{tikz}
 \usepackage{pict2e} %shéma%
 \pagestyle{fancy}
 \fancyhead[C]{}
@@ -30,6 +31,7 @@
 \definecolor{rouge-clair}{RGB}{255,163,168}
 \definecolor{rouge-tres-clair}{RGB}{255,217,219}
 \newcommand{\hr}{\rule{\linewidth}{0.5mm}}
+\newcommand{\br}{\\[0.5cm]}
 \renewcommand*{\familydefault}{\sfdefault}
 %Numéro de sections dans la marge
 \makeatletter
@@ -65,8 +67,6 @@ singlelinecheck=false
   \part{Contexte du stage}
   \input{chapitres/capgemini.tex}
   \input{chapitres/capgemini-rennes.tex}
-  %-------------------------------------------------------%
-  \part{Le projet Geofibre}
   \input{chapitres/geofibre.tex}
   %-------------------------------------------------------%
   \part{Réalisation du stage}
@@ -81,4 +81,5 @@ singlelinecheck=false
   \listoffigures
   \input{annexes/bibliographie.tex}
   \input{annexes/travaux-par-semaine.tex}
+  \input{annexes/annexes.tex}
 \end{document}
