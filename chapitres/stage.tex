@@ -1,8 +1,9 @@
 \chapter{Le Stage}
 \section{Sujet}
 
-Le sujet de stage est le développement d'une évolution sur l'application Geofibre. Le client souhaiterais en effet intégrer de nouvelles fonctionnalités, notamment l'apparition des cartes des départements d'Outre-Mer au sein de l'application.
-\\Cette version s'annoncant conséquente, l'équipe dirigante a renforcer le groupe.
+Le sujet de stage est la participation au développement d'une évolution sur l'application Geofibre.
+Le client souhaiterais en effet intégrer de nouvelles fonctionnalités, notamment l'intégration des cartes des départements d'Outre-Mer au sein de l'application.
+\\Cette version s'annoncant conséquente, l'équipe dirigante a décidé de renforcer le groupe.
 
 \section{Objectif}
 
@@ -11,33 +12,45 @@ L'objectif du stage est, dans un premier temps, de participer aux phases de dév
 
 \chapter{Organisation de l'équipe}
 
-L'équipe de travail s'occupant du projet Geofibre est organisée de la façon suivante :\\
+L'équipe de travail est organisée de la façon suivante :\\
 
-\begin{description}
-  \item[Le chef de groupe]
-  \item[Le chef de projet]
-  \item[L'équipe de développement]
-  \item[Le responsable de test], c'est aussi le chef de projet.
-  \item[Le responsable du groupe 1], c'est un mepmbre de l'équipe de développement.
-  \item[Le responsable du groupe 2], c'est un mepmbre de l'équipe de développement.\\
-\end{description}
-En ce qui me concerne, j'étais intégré au sein de l'équipe de développement composée de 10 personnes (1 externe et 9 salariés).
-\\Nous fonctionnons suivant la méthode \textit{LEAN} (cf. \ref{lean}); Chaque jour à 9h30 nous avons une réunion (\textit{Daily Meeting}) où chaque membres de l'équipe, tour par tour, décrit son humeur de la veille, les tâches qu'il a réalisé, les problèmes éventuels à signaler et ce qu'il prévoit de faire au fil de la journée. C'est une méthode qui permet de savoir où en est le projet, et plus particuliéremment chaque membres de l'équipe et chercher les solutions ensemble aux problèmes et affecter plus de personnes sur une tâche bloquante dans la limite du possible.
+\begin{itemize}
+  \item Le chef de groupe
+  \item Le chef de projet
+  \item L'équipe de développement
+  \item Le responsable de test, c'est aussi le chef de projet.
+  \item Le responsable du groupe, c'est un membre de l'équipe de développement.
+  \item Le responsable du groupe 2, c'est un membre de l'équipe de développement.\\
+\end{itemize}
+Je suis intégré au sein de l'équipe de développement composée de 10 personnes (1 externe et 9 salariés).
+\\Nous fonctionnons suivant la méthode \textit{LEAN}.
+
+ \begin{colbox}{{HTML}{A3E8FF}}{La méthode LEAN\\ }
+   \textbf{Objectif} : Améliorer de façon continue la performance en termes de qualité, coûts et délais de livraison.
+   \\\textbf{Origine} : Apparue dans le seconde moitié du XXème siècle avec l'entreprise \textit{Toyota}. La production de voiture répond à une demande, ainsi les stocks sont quasi inexistants.
+   \\\textbf{Principe} : Créer de la valeur ajoutée pour le client avec un minimum de gaspillage et en livrant un maximum de qualité.
+   \\\textbf{En tant que développeur} : Des indicateurs de qualité de code à améliorer au fil des versions, des délais de livraison du service fini à respecter.
+ \end{colbox}
+
+ Chaque jour à 9h30 nous avons une réunion (\textit{Daily Meeting}) où chaque membres de l'équipe, tour par tour, décrit son humeur de la veille, les tâches qu'il a réalisé, les problèmes éventuels à signaler et ce qu'il prévoit de faire au fil de la journée.
+ \\ C'est une méthode qui permet de savoir où en est le projet, et plus particuliéremment chaque membres de l'équipe. \\Cette méthode permet aussi de chercher les solutions ensemble aux problèmes et affecter plus de personnes sur une tâche bloquante dans la limite du possible.
 \\La communication et la transparence sur le travail réalisé font que les problèmes ne restent pas longtemps sans solutions.
-De plus, l'aménagement de l'\textit{Open-Space} permet de demander de l'aide rapidement aux collègues de travail. Ca permet de ne pas rester bloquer sur une tâche ou se désorienter.
+\\De plus, l'aménagement de l'\textit{Open-Space} permet de demander de l'aide rapidement aux collègues de travail. Ca permet de ne pas rester bloquer sur une tâche ou se désorienter.
 \\Le chef de projet écrit des fichiers de suivi d'avancement des tâches pour chaque phases du cycle du projet. Aux développeurs de le remplir en indiquant le temps passé sur chaques tâches réalisées et d'évaluer le \textit{RAF\footnote{le Reste à Faire}}. De cette manière le chef de projet et le chef de groupe peuvent planifier et piloter avec des risques moindre la suite du projet.
+
 \chapter{Environnement technique}
 \section{Architecture technique}
-L'architecture technique repose sur des machines virtuelles (excepté la BDD).
-Voici une liste des infrastructures présentes :
+L'architecture technique repose sur des machines virtuelles (excepté la textit{BDD}).
+Voici la liste des infrastructures présentes :
 \begin{description}
-	\item[Serveur WAS] C'est le serveur qui délivre l'application à l'utilisateur. En effet, il s'y connecte via le GASSI du client avec le protocole HTTP ou via un VPN avec le protocole SSL. Il fonctionne sur une machine Linux avec le serveur d'application JOnAS\footnote{Java Open Application Server}.
-\item[Serveur ArcGIS] Il traite les données SIG via le serveur ArcGIS délivré par l'éditeur Esri. Il fait le pont entre le serveur de base de données et le serveur WAS et accède aussi, via une architecture REST et SOAP à des interfaces Externes pour diverses missions. Par exemple avec l'application \textit{SIGEO}, développé par Capgemini pour récupérer les \textit{tuiles} de fond de plan.
-\item[Serveur d'impression] En raison de la charge induite par la génération des PDF destiné à l'impression de fond de plan (certains au format A0), des serveurs sont dédiés à cette tâche. Il fonctionne avec le serveur ArcGIS.
-\item[Serveur de base de données] Le serveur de base de données est PostGreSQL et permet de gérer l'accès et le stockage des données.\\
+\item[Serveur WAS] C'est le serveur qui délivre l'application à l'utilisateur. En effet, l'utilisateur s'y connecte via le \textit{GASSI}\footnote{Gestionnaire d'Accès Sécurisé interne au Système d'Information} du client avec le protocole \textit{HTTPS}\footnote{Hypertext Transfer Protocol Securised} ou via un \textit{VPN}\footnote{Virtual Private Network} avec le protocole \textit{SSL}\footnote{Secure Sockets Layer}.
+\\Il fonctionne sur une machine Linux avec le serveur d'application \textit{JOnAS}\footnote{Java Open Application Server}.
+\item[Serveur ArcGIS] Basé sur le progiciel \textit{ArcGIS} de l'éditeur \textit{ESRI}, il permet de traiter les données \textit{SIG} (calcul de projection, géométries ...). Il délivre les informations récoltées et traitées à partir de la base de données au serveur \textit{WAS} sur la base d'une architecture \textit{REST}\footnote{REpresentional State Transfer}; Il communique aussi avec des interfaces externes, par exemple avec l'application \textit{Sigeo} (développé par \textsc{Capgemini}) pour récupérer les \textit{tuiles}\footnote{Images de fond de plan et images du cadastre}.
+\item[Serveur d'impression] En raison de la charge induite par la génération des documents (\textit{PDF}) destiné à l'impression de fond de plan (certains au format A0), des serveurs sont dédiés à cette tâche. Il fonctionne eux aussi avec le progiciel \textit{ArcGIS}.
+\item[Serveur SGBD] Le serveur de base de données est \textit{PostGreSQL} et permet de gérer l'accès et le stockage des données.\\
 \end{description}
 
-\'Etant donné la charge sur l'application (rappel : 1150 utilisateur simultanés par jour) il existe plusieurs instances de serveurs et la communication d'un serveur à un autre se fait via des répartiteurs de charges qui vont requêter le bon serveur au bon moment afin d'équilibrer la charge de travail entre les différents serveurs. De ce fait il y a, en plateforme de production :
+\'Etant donné la charge sur l'application (rappel : 1150 utilisateur simultanés par jour) il existe plusieurs instances de serveurs et la communication d'un serveur à un autre se fait via des répartiteurs de charges qui vont requêter le bon serveur au bon moment afin d'équilibrer la charge de travail entre les différents serveurs. De ce fait il y a, en plateforme de production :\\
 
 \begin{itemize}
 	\item 3 Serveurs WAS
@@ -46,13 +59,20 @@ Voici une liste des infrastructures présentes :
 	\item 4 Serveurs d'impressions\\
 \end{itemize}
 \section{Outils et technologies}
-\subsection{FlashBuilder} ;pour le client flex, actionscript ..
-\subsection{Mozilla Firefox} ;parler de firebug .. requetes http
-\subsection{Eclipse} ;backoffice;java,tomcat ..
-\subsection{Qgis Desktop} ; visualisation SIG
-\subsection{PgAdmin}; administration de la base postgresql..
-\subsection{shell Linux}; accès aux serveurs arcgis was ...
-\subsection{Jenkins}; accès aux serveurs arcgis was ...
+\subsection{Adobe FlashBuilder}
+C'est un envirronement de développement d'applications basé sur le langage \textit{Actionscript} et le \textit{framework Flex Open Source}.
+ \\On l'utilise pour développer et débuguer l'application \textit{frontoffice} qui sera plaçée sur le serveur WAS.
+\subsection{Mozilla Firefox}
+C'est un navigateur web.
+ Il permet d'accèder à l'application via l'URL du serveur qui délivre une page HTML avec l'application \textit{frontoffice} embarquée dans un objet \textit{Flash}.
+ \\Aussi on utilise le plugin \textit{Firebug} qui permet de voir les requêtes HTTP envoyées et reçues par l'application,
+ ça permet de débuguer les communications avec le serveur.
+\subsection{Eclipse} Eclipse est un environnement de développement basé sur la langage \textit{Java}. Nous utilisons un environnement JEE afin de développer et débuguer le \textit{backoffice} qui intégre le SDK ArcGIS et qui permet de faire
+ les tâches relatives au SIG.
+\subsection{Qgis Desktop} C'est un logiciel qui permet de visualiser des données SIG. On l'utilise pour vérifier si des données sont biens représentées dans les phases de tests ou pour construire des jeux de données.
+\subsection{PgAdmin} C'est une interface d'administration à la base de données PostgreSQL utilisé par le projet.
+\subsection{shell Linux} Afin d'accèder aux serveurs WAS, ArcGIS ou SGBD via ssh et lancer différents scripts sur les machines (par exemple il y a un script pour la copie de données d'une commune à une autre).
+
 \chapter{Configuration du projet}
 \section{Identification des versions}
 \label{versionning}
@@ -154,66 +174,40 @@ Il faut donc prévoir autant d'espaces de travail disponibles et ceci pour les d
 
 Geofibre est versionné avec SVN. Il est nécessaire de créer un workspace pour le frontoffice et un workspace pour le backoffice afin de pouvoir développer et tester le code sur la machine locale.
 
-\chapter{Description du cahier des charges}
+\chapter{\'Evolutions et mise en place}
 \section{Version G1R6}
-je le réécrirais en plus simple\\
+
 La version applicative G1R6 de Geofibre doit permettre la prise en compte des DOMs. Pour cela des instances spécifiques sont mises en place  pour les différents départements (Réunion, Martinique, Guadeloupe et Guyane).
 La mise à disposition de Geofibre dans les DOMs doit être équivalente vue de l’utilisateur à la version métropole.
+\\Les données dans les DOMs seront gérées dans le système de projection local. Il n’y aura pas, comme en métropole (Lambert II étendu vers Lambert 93), de reprojection vers le système local ou d’export de données vers un autre système.\\
 
-Les données dans les DOMs seront gérées dans le système de projection local. Il n’y aura pas, comme en métropole (Lambert II étendu vers Lambert 93), de reprojection vers le système local ou d’export de données vers un autre système.
-
-ZONE
- 	SYSTEME GEODESIQUE 	PROJECTION
-
-France métropolitaine 	RGF93
- 	Lambert 93.
-
-Guadeloupe, 	WGS84
- 	UTM Nord fuseau 20.
-
-Martinique 	WGS84
- 	UTM Nord fuseau 20.
-
-Guyane 	RGFG95 	UTM Nord fuseau 22.
-Réunion 	RGR92 	UTM Sud fuseau 40.
-
+\begin{tabular}{|l|c|r|}
+  \hline
+    Zone & Système géodesique & Projection \\
+  \hline
+  France métropolitaine & RGF93 & Lambert 93 \\
+  Guadeloupe & WGS84 & UTM Nord fuseau 20 \\
+  Martinique & WGS84 & UTM Nord fuseau 20 \\
+  Guyane & RGFG95 & UTM Nord fuseau 22 \\
+  Réunion & RGR92 & UTM Sud fuseau 40 \\
+  \hline
+\end{tabular}\\\\
 
 Malgré le fait que les serveurs soient hébergés en métropole, les horaires de création ou modification des objets stockés en base DOMs seront renseignés en heure locale.
 
 \section{Version G1R7}
-je le réécrirais en plus simple\\
-Cette version est essentiellement  fonctionnelle et dédiée à la prise en compte des paliers RIP et DSP.
-Détail des items embarqués :
-\begin{itemize}
-\item Migration des RIP LTHD et CAPS de TIGRE
-\item Configuration d’un ensemble de RIP
-\item Gestion de valeurs par défaut sur l’IHM pour faciliter les actions de création/modification
-\item Prise en compte des impacts sur les interfaces avec IPON (dont flux supplémentaires)
-\item Prise en compte des impacts sur la Publication du SD.
-\item Prise en compte des impacts sur la symbologie des immeubles
-\item Ajout de filtrages RIP/Orange
-\item Mise en conformité des études RIP existantes dans Geofibre
-\item	Enveloppe MCO de la DS PIAR
-\item Modification de la définition des diamètres des câbles pour l'extraction de l'annexe C3a (avec table de correspondance).
-\item Evolution réglementaire de l’Annexe D8 (exports OPGC afin de différencier le mode de pose (Aérien ou Souterrain) et de visualiser le nombre de câbles sur les parcours (dont information de mode de pose liée au parcours).
-\item Changement d’identification sur les nouveaux appuis ERDF (Exxxxxx au lieu de ERDFxxx), sans rattrapage de l’existant.
-\item Des utilisateurs spécialisés sur l’activité RIP vont être ajoutés sur l’IHM GeoFibre.
-\end{itemize}
-D’un point de vue technique, la seule évolution concerne les flux IPON->GFI : IPON enverra un fichier Orange et un fichier RIP pour les câbles et les points techniques.
-Aucune autre incidence sur l’architecture : le nombre des  nouveaux utilisateurs n’est pas de nature à saturer les ressources serveurs.
+Cette version est essentiellement  fonctionnelle et dédiée à la prise en comptes de des paliers RIP\footnote{Les réseaux d’initiative publique} et DSP\footnote{Délégation de Service Public}.
 
-\chapter{Cycle de développement en V}
-<speach sur le cycle en V>
+\section{Cycle de développement en V}
+Le projet fonctionne en cycle en V, suivant ce schéma :
 \begin{figure}
   \captionbox{Cycle en V\label{fig:dummy}}{
     \includegraphics[width=14cm]{images/cycle_en_v.png}
   }
 \end{figure}
-\chapter{Plannification}
-Ici un diagramme montrant mon planning durant le stage.
-mars<->juin g1r6\\
-juin->annomalie éligible g1r7\\
-juillet<->aout g1r7
+\section{Plannification}
+Voici le planning qui représente la répartition des tâches durant mon stage :
+
 \chapter{Travail réalisé}
 \section{Montée en compétence}
 je vais parler de la prise en main des outils, des langages et la compréhension de geofibre.
