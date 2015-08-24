@@ -172,7 +172,20 @@ Il faut donc prévoir autant d'espaces de travail disponibles et ceci pour les d
 	\item Livraison (effectuée sur la plate-forme de qualification)\\
 \end{itemize}
 
-Geofibre est versionné avec SVN. Il est nécessaire de créer un workspace pour le frontoffice et un workspace pour le backoffice afin de pouvoir développer et tester le code sur la machine locale.
+Geofibre est versionné avec SVN\footnote{Subversion}, voici la hiérarchie des projets du \textit{repository} :\\
+
+\dirtree{%
+.1 \myfolder{red}{Trunk }.
+.2 \myfolder{black}{gfi-front \textit{frontoffice}}.
+.3 \myfolder{black}{5 projets}.
+.2 \myfolder{black}{gfi-back \textit{backoffice}}.
+.3 \myfolder{black}{7 projets}.
+.2 \myfolder{black}{gfi-bdd \textit{base de données}}.
+.3 \myfolder{black}{3 projets}.
+.2 \myfolder{black}{gfi-expl textit{exploitation}}.
+.3 \myfolder{black}{9 projets}.
+}
+
 
 \chapter{\'Evolutions et mise en place}
 \section{Version G1R6}
@@ -199,21 +212,52 @@ Malgré le fait que les serveurs soient hébergés en métropole, les horaires d
 Cette version est essentiellement  fonctionnelle et dédiée à la prise en comptes de des paliers RIP\footnote{Les réseaux d’initiative publique} et DSP\footnote{Délégation de Service Public}.
 
 \section{Cycle de développement en V}
-Le projet fonctionne en cycle en V, suivant ce schéma :
-\begin{figure}
-  \captionbox{Cycle en V\label{fig:dummy}}{
-    \includegraphics[width=14cm]{images/cycle_en_v.png}
-  }
-\end{figure}
-\section{Plannification}
-Voici le planning qui représente la répartition des tâches durant mon stage :
+Le projet fonctionne en cycle en V, suivant ce schéma :\\
+\noindent%
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,scale=0.8]{images/cycle_en_v.png}}
+\captionof{figure}{Cycle de développement en V}\label{visina8}%      only if needed
+\end{minipage}
 
+\section{Plannification}
+Voici le planning qui représente la répartition des tâches durant mon stage :\\\\
+\noindent%
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,scale=0.8]{images/gant.png}}
+\captionof{figure}{Planning des tâches réalisées}\label{visina8}%      only if needed
+\end{minipage}
 \chapter{Travail réalisé}
-\section{Montée en compétence}
-je vais parler de la prise en main des outils, des langages et la compréhension de geofibre.
+Je suis arrivé sur le projet lorsque la version G1R6 étais à la fin de la phase de programmation. J'ai participé un peu à la programmation, à la phase d'intégration et de maintenance.
+\\J'ai pu commencer la version G1R7 de la rédaction des spécifications jusqu'à l'intégration.
 \section{Développement}
-Je parlerais des développements que j'ai fait pour al G1R6 (externalisation des paramètres du code en BDD).
-Et des développement en G1R7 (Ajout du champ deployeur en BDD, sur l'IHM, script de recopie de données par ex)
+\subsection{Version G1R6}
+On m'a rapidement permis de développer sur le projet. La première tâche consisté à externaliser des paramètres de configuration concernant le zoom, la projection et la minicarte qui se trouve "en dur" dans l'application.
+\\Cette première tâche de développement m'a permis de mieux comprendre le fonctionnement du projet car j'ai du modifier les trois parties de l'application :\\
+\begin{itemize}
+\item La base de données (gfi-bdd). En insérant de nouvelles données dans la table de configuration
+\item Le backoffice (gfi-back). En faisant le Mapping\footnote{Association des données en base à des objets en programmation} des données.
+\item Le frontoffice (gfi-front). En supprimant les données de configuration "en dur" dans le programme et en envoyant les bonnes commandes au serveur pour récupérer les paramètres de configurations présents en base de données.\\
+\end{itemize}
+J'ai posé beaucoup de questions à l'équipe de développement pour valider mon travail.
+\\ Ensuite j'ai eu en charge de vérifier si le paramètre de projection était bien transmis aux  \textit{Toolboxs\footnote{Les Toolboxs sont des servlets Java, ce sont des extensions des fonctions du serveur de base.}} (gfi-back) et si elles étaient bien aiguillés en fonction de ce paramètre de projection.
+Pour cela j'ai du vérifier les requêtes envoyées par le client lors de l'appel de la Toolbox et vérifier dans le backoffice si le paramète était bien transmis et vers la bonne servlet en analysant ce qui était retourné.
+
+\subsection{Version G1R7}
+Lors de la phase de développement de la version G1R7 j'avais beaucoup plus d'expérience sur le projet et je n'ai pas eu de  gros problèmes à développer ce qui été demander et j'avais déjà les idées sur l'implémentation de ce que je devais faire.
+\\En effet je me suis occupé du widget \textit{Publication de Schéma Directeur} (gfi-front, gfi-back, gfi-data) où j'ai ajouté le champs opérateur au niveau de la base de données et de l'IHM. Puis j'ai modifier les commandes de selections, d'extraction et d'impression pour qu'elles se réalise avec un filtrage sur le champ opérateur.
+\\\\
+\noindent%
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,scale=0.5]{images/publicationSD.png}}
+\captionof{figure}{Widget publication SD}\label{visina8}%      only if needed
+\end{minipage}\\
+
+Je me suis ensuite occupé du \textit{programme de copie de données} (gfi-expl), qui permet de copier des données FTTH d'une commune à une autre.
+\\J'ai ajouté une contrainte lié à la configuration des RIP : si la commune d'export n'a pas de configuration RIP alors elle prend pour valeur la configuration RIP de la table source.
+
 \section{Intégration}
 Je parlerais des tests d'integration, leurs niveau d'importance, le système de vagues, et un exemple de passage
 \section{Corrections d'anomalies}

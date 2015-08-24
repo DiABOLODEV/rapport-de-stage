@@ -21,6 +21,16 @@
 \usepackage{caption} %caption des images figure
 \usepackage{epigraph} %citations%
 \usepackage{lmodern}
+\usepackage{dirtree}
+% The following is a dummy icon command
+\newcommand\myicon[1]{{\color{#1}\rule{2ex}{2ex}}}
+% If you have actual icon images, use \includegraphics to include them
+% If you are generating them, put in the appropriate code for them here
+% now we make a command for a folder/file which inserts the icon and its label
+% adjust this as needed. If you only have 2 icons, then you could create
+% a \myfile and \myfolder command with the icon fixed.
+\newcommand{\myfolder}[2]{\myicon{#1}\ {#2}}
+
 \usepackage{pict2e} %shéma%
 \pagestyle{fancy}
 \fancyhead[C]{}
