@@ -259,6 +259,36 @@ Je me suis ensuite occupé du \textit{programme de copie de données} (gfi-expl)
 \\J'ai ajouté une contrainte lié à la configuration des RIP : si la commune d'export n'a pas de configuration RIP alors elle prend pour valeur la configuration RIP de la table source.
 
 \section{Intégration}
-Je parlerais des tests d'integration, leurs niveau d'importance, le système de vagues, et un exemple de passage
+La phase d'intégration permet de tester les développements réalisé. Voir si le client est vraiment ce qu'il attendais et si il n'y a pas d'anomalies.
+\\\\
+Le chef de projet commence par attribuer les tests aux différents développeurs avec le logiciel textit{HP QC}; ensuite il nous suffit de filtrer les tests pour exécuter ceux qui nous sont attribué.
+\\Le passage d'un test se déroule de la manière suivante :
+\begin{enumerate}
+\item on exécute les tests un par un par priorité (P1 en premier, P2 en deuxiéme et P3 en dernier).
+\item on passe le test en cours d'éxecution pas par pas.
+\item si une étape se déroule comme prévu (\textit{result obtained} = \textit{result excepted}) on met l'étape à l'état \textit{passed} et on passe à la suivante.
+\item si une étape échoue, on met l'étape à l'état \textit{failed} et si ce n'est pas déjà fait on créer une anomalie (\textit{defect}) décrivant l'anomalie détecté et la version d'intégration.
+\item si on est bloqué dans une étape, par exemple si il manque des données on met l'étape à l'état \textit{bloqued} et on
+ met le test de côté pour le continuer lorsque l'étape sera débloquée.\\
+ \end{enumerate}
+
+ Une fois la phase de tests terminée, si des anomalies sont détectées ont les corrige et on passe à une nouvelle version d'intégration. C'est un système de vague, ainsi pour la version G1R6 il y a eu 6 vagues et pour la version G1R7 j'ai terminé mon stage pendant que nous étions à la 2ème vague d'intégration.
+
 \section{Corrections d'anomalies}
-Je parlerais de comment on corrige une anomalie et un exemple.
+Une fois l'intégration et la livraison terminée pour la version G1R6, les responsables de groupes travaillé avec le client sur l'élaboration des spécifications de la version G1R7.
+\\Pendant ce temps je me suis occupé de corriger des anomalies en garantie que le client a détecté et a choisi de faire corriger pour la version G1R7, ce sont les \textit{anomalies éligibles à la version G1R7}.
+\\Sous le logiciel \textit{HP QC} les anomalies sont répertoriées avec les détails de leurs apparition, écrite par le client et parfois les solutions préconisées.
+\\Il s'agisser donc de reproduire l'anomalie sur une version G1R6 de Geofibre et de la corriger. Une fois corriger, le code est commité sur la branche \textit{G1R7} et une synthèse est écrite par le correcteur.
+\\\\
+\noindent%
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,scale=0.8]{images/exano.png}}
+\captionof{figure}{Exemple de la synthèse de correction d'une anomalie}\label{visina8}%      only if needed
+\end{minipage}\\
+\section{Bilan du travail réalisé}
+
+J'ai beaucoup appris sur l'organisation d'un équipe et d'un projet. Les différentes étapes du cycle en V sont biens exécuter selon les règles de l'entreprise \textsc{Capgemini}.
+\\De plus, c'est un projet déjà bien en place et je n'ai pas beaucoup développé, mais fait beaucoup de lecture, compréhension et modification de code.
+\\Prendre le temps de repasser sur du code écrit par une autre équipe n'été pas dans mes cordes et durant ces 6 mois de stage j'ai réussie à prendre le temps de comprendre et de m'adapter à un code déjà en place et je me suis rendu compte de
+ l'importance d'une bonne architecture logicielle à la base d'un projet mais aussi l'importance des commentaires dans le code. 
